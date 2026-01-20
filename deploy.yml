@@ -1,0 +1,15 @@
+- name: Deploy Project Atlas
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Ensure deploy directory
+      file:
+        path: C:/deploy/project-atlas
+        state: directory
+
+    - name: Copy JAR
+      copy:
+        src: app/build/libs/app.jar
+        dest: C:/deploy/project-atlas/app.jar
