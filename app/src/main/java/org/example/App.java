@@ -4,11 +4,12 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+
+    public static String healthCheck() {
+        return "Project Atlas is running";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        System.out.println(healthCheck());
     }
 }

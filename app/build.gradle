@@ -6,6 +6,7 @@
  */
 
 plugins {
+     id 'java'
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
@@ -33,11 +34,17 @@ java {
 }
 
 application {
-    // Define the main class for the application.
-    mainClass = 'org.example.App'
+    mainClass = 'com.atlas.App'
 }
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'org.example.App'
+        )
+    }
 }
